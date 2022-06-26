@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+header{
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    color: #000;
+    background-color: #AD8B73;
+}
+header nav {
+    position: relative;
+    right: 30px;
+}
+header h2{
+    position: relative;
+    left: 20px;
+}
+
+#producto-contenedor {
+    display: grid;
+    margin: 90px auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+} 
+
+.card{
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 25px 0px;
+}
