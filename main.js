@@ -23,7 +23,6 @@ const mostrarProductos = (productos) => {
 
     const boton = document.getElementById(`boton${producto.id}`)
     boton.addEventListener('click', ()=>{
-        //debugger
         agregarAlCarrito(producto.nombre)
         alert(`Se agrego ${producto.nombre}`)
     })
@@ -36,30 +35,29 @@ mostrarProductos(productos)
 
 const carrito = []
 
-function agregarAlCarrito (productoId) {
-    carrito.push(productoId)
-    const contenedorProductos = document.getElementById('carrito-contenedor');
+const agregarAlCarrito = (productoN) => {
+    const contenedorCarrito =  document.getElementById("carrito-contenedor")
+       
+    const renderProductoCarrito = ()=>{
+        let producto = productos.find( producto => producto.nombre == productoN)
+        carrito.push(producto)
 
-    productos.forEach( producto => {
-        const li = document.createElement('li')
-        li.classList.add('productoEnCarrito')
-        li.innerHTML += `<li>
-                <lu>Modelo: ${producto.nombre}</td>
-                <lu>Tipo de soporte:${producto.desc}</td>
-                <lu>Precio: $${producto.precio}</td>
-                <button class="btn btn-primary" id=boton${producto.id}>Eliminar</button>
-        </li>`
-        li.id = producto.id + "enCarrito"
-        li.addEventListener("dblclick", () => {
-            removerDelCarrito (`${li.id}`)
-        })
+        let div = document.createElement ('div')
+        div.classList.add('productoEnCarrito')        
+        div.innerHTML += `<p>${producto.nombre}</p>
+                        <p>Tipo de soporte: ${producto.desc}</p>
+                        <p>Precio: ${producto.precio}</p>
+                        <button class="btn btn-primary">Eliminar</button>
+        `
+        contenedorCarrito.appendChild(div)
+        }
     
-    contenedorProductos.appendChild(li)
-})
+    renderProductoCarrito ()
 }
 
-//function removerDelCarrituo(productoId) {
-//    const productoAremover = document.getElementById('carrito-contenedor');
-//        productoAremover.remove()
-//}
+
+function removerDelCarrituo(productoN) {
+    const productoAremover = document.getElementById('carrito-contenedor');
+        productoAremover.remove()
+}
 

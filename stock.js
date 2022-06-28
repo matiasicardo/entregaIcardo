@@ -68,7 +68,7 @@ const productos = [
         nombre:"L85",
         desc:"Movil hasta 65",
         precio:5000,
-        img:'src/multimedias/fotos/L75.png',
+        img:'src/multimedias/fotos/L85.png',
         cantidad:10
     },
 ]
