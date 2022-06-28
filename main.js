@@ -47,17 +47,22 @@ const agregarAlCarrito = (productoN) => {
         div.innerHTML += `<p>${producto.nombre}</p>
                         <p>Tipo de soporte: ${producto.desc}</p>
                         <p>Precio: ${producto.precio}</p>
-                        <button class="btn btn-primary">Eliminar</button>
+                        <button class="btn btn-primary" id=botonC${producto.id}>Eliminar</button>
         `
+        div.addEventListener("click", () => {
+            removerCarrito(producto.nombre)
+        })
         contenedorCarrito.appendChild(div)
         }
     
     renderProductoCarrito ()
 }
 
-
-function removerDelCarrituo(productoN) {
-    const productoAremover = document.getElementById('carrito-contenedor');
-        productoAremover.remove()
+const removerCarrito = (productoEliminado) => {
+    debugger
+    const contCarrito =  carrito.find( producto => producto.nombre == productoEliminado)
+    const indice = carrito.indexOf(contCarrito)
+    carrito.splice(indice, 1)
 }
+
 
