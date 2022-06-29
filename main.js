@@ -36,33 +36,43 @@ mostrarProductos(productos)
 const carrito = []
 
 const agregarAlCarrito = (productoN) => {
+    console.log(productoN)
     const contenedorCarrito =  document.getElementById("carrito-contenedor")
        
     const renderProductoCarrito = ()=>{
         let producto = productos.find( producto => producto.nombre == productoN)
+        console.log("push carrito:", producto)
         carrito.push(producto)
+        console.log("push carrito despues:", carrito)
 
         let div = document.createElement ('div')
-        div.classList.add('productoEnCarrito')        
+        div.classList.add('productoEnCarrito')  
+        div.id = producto.id
+        console.log(div.id)     
         div.innerHTML += `<p>${producto.nombre}</p>
                         <p>Tipo de soporte: ${producto.desc}</p>
                         <p>Precio: ${producto.precio}</p>
                         <button class="btn btn-primary" id=botonC${producto.id}>Eliminar</button>
         `
         div.addEventListener("click", () => {
-            removerCarrito(producto.nombre)
+            removerCarrito(`${div.id}`)
         })
         contenedorCarrito.appendChild(div)
         }
+        console.log(carrito)
     
     renderProductoCarrito ()
 }
 
 const removerCarrito = (productoEliminado) => {
-    debugger
-    const contCarrito =  carrito.find( producto => producto.nombre == productoEliminado)
-    const indice = carrito.indexOf(contCarrito)
+    // debugger
+    console.log("producto agregado desde remover: ", carrito)
+    const productoAremover = document.getElementById(`${productoEliminado}`)
+    productoAremover.remove()
+   // const contCarrito =  carrito.find( producto => producto.nombre == productoEliminado)
+    const indice = carrito.indexOf(productoAremover.innerHTML)
     carrito.splice(indice, 1)
 }
+
 
 
