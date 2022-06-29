@@ -1,5 +1,5 @@
 import { productos  } from "./stock.js";
-//import { carrito } from "./stock.js";
+
 
 
 const mostrarProductos = (productos) => {

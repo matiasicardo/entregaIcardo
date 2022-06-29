@@ -28,6 +28,53 @@ header h2 {
     left: 20px;
 }
 
+ul {
+    list-style: none;
+}
+
+.foto-portada-left {
+    width: 100%;
+
+}
+/*fotos portadas inferior*/
+.foto-portada-inferior1 {
+    width: 50%;
+
+}
+.foto-portada-inferior ul {
+    display:flex;
+}
+.foto-portada-inferior ul li {
+    padding: 20px;
+}
+
+/*ofertas */
+h2 {
+    text-align: center;
+    height: 10%;
+    font-family: 'Poppins', sans-serif;
+    padding: 10%;
+}
+
+.seccion-ofertas {
+    display: grid;
+    grid-template-columns: repeat (3fr);
+    display: flex;
+}
+.seccion-ofertas .foto-ofertas {
+    width: 50%;
+    height: 180px;
+}
+/*contacto*/
+.contacto {
+    height: 10%;
+    padding:1%;
+    width: 75%;
+    align-items: center;
+    border: 2px orangered solid;
+    margin: 10%;
+}
+
 #producto-contenedor {
     display: grid;
     margin: 90px auto;

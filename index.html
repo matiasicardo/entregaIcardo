@@ -6,21 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--css-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <!--Bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
     <!--js-->
-    <script src="main.js" type="module"></script>
-    <script src="stock.js" type="module"></script>
-    <title>Soportes</title>
+    <script src="/js/main.js" type="module"></script>
+    <script src="/js/stock.js" type="module"></script>
+    <script src="/js/mainForm.js"></script>
+
+    <title>SoportesTV</title>
 </head>
 
 <body>
-
     <header>
         <div class="titulo">
-            <h2>Productos</h2>
+            <h2>Inicio</h2>
         </div>
         <nav>
             <ul class="nav justify-content-end">
@@ -28,25 +33,90 @@
                     <a class="nav-link active  text-body" aria-current="page" href="#">Mi Cuenta</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-body" href="#">Ofertas</a>
+                    <a class="nav-link text-body" href="#ofertas">Ofertas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-body" href="#">Contacto</a>
+                    <a class="nav-link text-body" href="#contacto">Contacto</a>
                 </li>
                 <li class="nav-item ">
-                    <button class="nav-link text-body" id="open" href="#">Carrito <span id="contador-carrito">0</span> </a>
+                    <button class="nav-link text-body" id="open" href="#">Carrito <span id="contador-carrito">0</span>
+                        </a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main id="producto-contenedor">
-    </main>
-    <h3>Tu Carrito</h3>
-    <main id="carrito-contenedor">
-    </main>
-
-
+    <div>
+    <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="header-container-left">
+              <img src="src/multimedias/fotos/portada.jpg" alt="foto-portada-left" class="foto-portada-left">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="header-container-rigth">
+              <h1>Los mejores soportes de tvs!</h1>
+              <h2 class="mt-5">Envio Gratis a partir de $4000</h2>
+              <a href="#contacto" class="btn btn-outline-secundary mt-4 btn-lg">Ver mas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Parte inferior portada-->
+    <div class="foto-portada-inferior">
+      <ul>
+        <li class="foto-portada-inferior1">
+          <img src="./src/multimedias/fotos/envio.jpg" class="foto-portada-inferior1" alt="envio">
+        </li>
+        <li class="foto-portada-inferior1">
+          <img src="./src/multimedias/fotos/mercadopago.jpg" class="foto-portada-inferior1" alt="mp">
+        </li>
+        <li class="foto-portada-inferior1">
+          <img src="./src/multimedias/fotos/ofertas.jpg" class="foto-portada-inferior1" alt="ofertas">
+        </li>
+      </ul>
+    </div>
+    <!--Ofertas-->
+    <h2 id="ofertas">Ofertas</h2>
+    <div class="seccion-ofertas">
+      <div class="foto-ofertas">
+        <img src="./src/multimedias/fotos/L74_02.png" class="foto-portada-inferior1" alt="envio">
+        <a href="./src/paginas/productos.html" class="btn btn-outline-secundary mt-4 btn-lg5">Soportes Moviles</a>
+      </div>
+      <div class="foto-ofertas">
+        <img src="./src/multimedias/fotos/SOPORTE-LED-LCD-L4044-010.png" class="foto-portada-inferior1" alt="mp">
+        <a href="./src/paginas/productos.html" class="btn btn-outline-secundary mt-4 btn-lg5">Soportes fijos e inclinables</a>
+      </div>
+      <div class="foto-ofertas">
+        <img src="./src/multimedias/fotos/SOPORTE-TV-LCD-E4040-01.jpg" class="foto-portada-inferior1" alt="ofertas">
+        <a href="./src/paginas/productos.html" class="btn btn-outline-secundary mt-4 btn-lg5">Soportes fijos</a>
+      </div>
+    </div>
+    <!--Contacto-->
+    <br>
+    <h2 id="contacto">Contacto</h2>
+    <div class="contacto">
+      <form class="contacto__form">
+        <div class="mb-3 form-group">
+          <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+        </div>
+        <div class="mb-3 form-group">
+          <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+        </div>
+        <div class="mb-3 form-group">
+          <input type="email" class="form-control" id="inputEmail" placeholder="Correo@mail.com">
+        </div>
+        <div class="mb-3 form-group">
+          <label for="exampleFormControlTextarea1" class="form-label">Comentarios:</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="mb-3 form-group">
+          <button type="submit" class="btn btn-light" id="submit">ENVIAR</button>
+        </div>
+      </form>
+    </div>
 
 <!--Bootstrap js-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
@@ -57,4 +127,5 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </body>
+
 </html>
