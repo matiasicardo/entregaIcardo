@@ -37,6 +37,7 @@ const carrito = []
 
 const agregarAlCarrito = (productoN) => {
     console.log(productoN)
+    guardoCarrito()
     const contenedorCarrito =  document.getElementById("carrito-contenedor")
        
     const renderProductoCarrito = ()=>{
@@ -51,7 +52,7 @@ const agregarAlCarrito = (productoN) => {
         console.log(div.id)     
         div.innerHTML += `<p>${producto.nombre}</p>
                         <p>Tipo de soporte: ${producto.desc}</p>
-                        <p>Precio: ${producto.precio}</p>
+                        <p>Precio:$ ${producto.precio}</p>
                         <button class="btn btn-primary" id=botonC${producto.id}>Eliminar</button>
         `
         div.addEventListener("click", () => {
@@ -74,5 +75,20 @@ const removerCarrito = (productoEliminado) => {
     carrito.splice(indice, 1)
 }
 
+function guardoCarrito () {
+    if (carrito.length > 0)
+        localStorage.setItem("carrito", JSON.stringify(carrito))
+}
 
+function recuperoCarrito () {
+    debugger
+    let miCarrito
+    if (miCarrito = JSON.parse (localStorage.getItem("carrito"))) {
+        miCarrito.forEach ( soporte => {
+            carrito.push(soporte)
+        });
 
+    }
+}
+
+recuperoCarrito ()
