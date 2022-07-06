@@ -5,7 +5,7 @@ const productos = [
         desc:"Fijo",
         precio:500,
         img:'../../src/multimedias/fotos/E2020.png',
-        cantidad:10
+        cantidad:1
     },
     {
         id:2,
@@ -13,7 +13,7 @@ const productos = [
         desc:"Fijo",
         precio:800,
         img:'../../src/multimedias/fotos/SOPORTE-TV-LCD-E4040-01.jpg',
-        cantidad:10
+        cantidad:1
     },
     {
         id:3,
@@ -21,7 +21,7 @@ const productos = [
         desc:"Fijo e inclinable",
         precio:800,
         img:'../../src/multimedias/fotos/L2022.png',
-        cantidad:10
+        cantidad:1
     },
     {
         id:4,
@@ -29,7 +29,7 @@ const productos = [
         desc:"Fijo e inclinable",
         precio:1200,
         img:'../../src/multimedias/fotos/SOPORTE-LED-LCD-L4044-010.png',
-        cantidad:10
+        cantidad:1
     },
     {
         id:5,
@@ -37,7 +37,7 @@ const productos = [
         desc:"Movil hasta 43",
         precio:2000,
         img:'../../src/multimedias/fotos/L40.png',
-        cantidad:10
+        cantidad:1
     },
     {
         id:6,
@@ -45,7 +45,7 @@ const productos = [
         desc:"Movil hasta 43",
         precio:2500,
         img:'../../src/multimedias/fotos/L43.png',
-        cantidad:10
+        cantidad:1
     },
     {
         id:7,
@@ -53,7 +53,7 @@ const productos = [
         desc:"Movil hasta 55",
         precio:3000,
         img:'../../src/multimedias/fotos/L74_02.png',
-        cantidad:10
+        cantidad:1
     },
     {
         id:8,
@@ -61,7 +61,7 @@ const productos = [
         desc:"Movil hasta 55",
         precio:3500,
         img:'../../src/multimedias/fotos/L75.png',
-        cantidad:10
+        cantidad:1
     },
     {
         id:9,
@@ -69,7 +69,7 @@ const productos = [
         desc:"Movil hasta 65",
         precio:5000,
         img:'../../src/multimedias/fotos/L85.png',
-        cantidad:10
+        cantidad:1
     },
 ]
 
