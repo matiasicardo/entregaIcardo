@@ -35,7 +35,7 @@ productos.forEach(producto => {
 })
 
 const agregarAlCarrito = (productoN) => {
-    const existe = carrito.some (producto => producto.nombre === productoN)
+    const existe = carrito.some(producto => producto.nombre === productoN)
     if (existe) {
         const producto = carrito.map(producto => {
             if (producto.nombre === productoN) {
@@ -79,18 +79,18 @@ const actualizarCarrito = () => {
                 `
         contenedorCarrito.appendChild(div)
 
-        localStorage.setItem('carrito',JSON.stringify(carrito))
+        localStorage.setItem('carrito', JSON.stringify(carrito))
 
         const boton = document.getElementById(`botonC${producto.id}`)
         boton.addEventListener('click', () => {
             removerCarrito(producto.nombre)
         })
     })
-    precioTotal.innerText = carrito.reduce((acc,producto) => acc + producto.precio, 0) 
+    precioTotal.innerText = carrito.reduce((acc, producto) => acc + producto.precio, 0)
 
 }
 
-const precioTotal=document.getElementById('precioTotal')
+const precioTotal = document.getElementById('precioTotal')
 
 
 Swal.fire({
@@ -113,98 +113,37 @@ Swal.fire({
 })
 
 /*
-    const mostrarProductos = (productos) => {
-        //debugger
-        const contenedorProductos = document.getElementById('producto-contenedor');
-
-        productos.forEach(producto => {
-            const div = document.createElement('div')
-            div.classList.add('card')
-            div.innerHTML += `<div class="card" style="width: 18rem;">
-                            <img src="${producto.img}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">${producto.nombre}</h5>
-                                <p class="card-text">Descripción:  ${producto.desc}</p>
-                                <p class="card-text">Precio:$ ${producto.precio}</p>
-                                <button class="btn btn-primary" id=boton${producto.id}>Comprar</button>
-                            </div>
-                        </div>`
-
-            contenedorProductos.appendChild(div)
-
-            const boton = document.getElementById(`boton${producto.id}`)
-            boton.addEventListener('click', () => {
-                agregarAlCarrito(producto.nombre)
-                alert(`Se agrego ${producto.nombre}`)
-            })
-
+ fetch(URL)
+        .then((response)=> response.json())
+        .then( (data)=> {
+            console.table(data)
         })
+  */
+const URL = `js/soportes.json`
 
-    }
+const obtenerContenido = (URL) => {
+    let cardsAmostrar = ""
+    debugger
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            for (contenido of data)
+                  cardsAmostrar += retornoCardContenido(contenido)
+               contenidoDOM.innerHTML = cardsAmostrar
+        })
+};
+obtenerContenido(URL)
 
-    mostrarProductos(productos)
-
-    const carrito = []
-
-
-    const agregarAlCarrito = (productoN) => {
-        guardoCarrito()
-        const contenedorCarrito = document.getElementById("carrito-contenedor")
-
-        const renderProductoCarrito = () => {
-            let producto = productos.find(producto => producto.nombre == productoN)
-            carrito.push(producto)
-            preciosCarrito.push(producto.precio)
-            console.log(producto.precio)
-
-
-            producto.cantidad = 1
-
-            let div = document.createElement('div')
-            div.classList.add('productoEnCarrito')
-            div.id = producto.id
-            div.innerHTML += `<p>${producto.nombre}</p>
-                        <p>Tipo de soporte: ${producto.desc}</p>
-                        <p>Precio:$ ${producto.precio}</p>
-                        <p id="cantidad${producto.id}">Cantidad: ${producto.cantidad}</p>
-                        <button class="btn btn-primary" id=botonC${producto.id}>Eliminar</button>
-        `
-            div.addEventListener("click", () => {
-                removerCarrito(`${div.id}`)
-            })
-            contenedorCarrito.appendChild(div)
-        }
-
-        renderProductoCarrito()
-    }
-    const preciosCarrito = []
-
-    let resultadoCarrito = 
-
-const removerCarrito = (productoEliminado) => {
-        // debugger
-        console.log("producto agregado desde remover: ", carrito)
-        const productoAremover = document.getElementById(`${productoEliminado}`)
-        productoAremover.remove()
-        // const contCarrito =  carrito.find( producto => producto.nombre == productoEliminado)
-        const indice = carrito.indexOf(productoAremover.innerHTML)
-        carrito.splice(indice, 1)
-    }
-
-
-    function guardoCarrito() {
-        if (carrito.length > 0)
-            localStorage.setItem("carrito", JSON.stringify(carrito))
-    }
-
-    function recuperoCarrito() {
-        let miCarrito
-        if (miCarrito = JSON.parse(localStorage.getItem("carrito"))) {
-            miCarrito.forEach(soporte => {
-                carrito.push(soporte)
-            });
-
-        }
-    }
-
-    recuperoCarrito()*/
+const retornoCardContenido = (contenido) => {
+       debugger
+   const {nombre, desc, precio,img, id} = contenido
+   return `<div class="card" style="width: 18rem;">
+   <img src="${img}" class="card-img-top" alt="...">
+   <div class="card-body">
+       <h5 class="card-title">${nombre}</h5>
+       <p class="card-text">Descripción:  ${desc}</p>
+       <p class="card-text">Precio:$ ${precio}</p>
+       <button class="btn btn-primary" id=boton${id}>Comprar</button>
+   </div>
+</div>`
+};
